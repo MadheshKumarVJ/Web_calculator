@@ -1,14 +1,20 @@
 {% extends "base.html" %}
-{% block title %}Calculator{% endblock %}
+{% load calc_tags %}
+{% block title %}TestPress Calculator{% endblock %}
 {% block content %}
- <h1>ADDITION</h1>
  <p>Please, use the following form to perform arithmetic operations </p>
  <form method="post">
  {{ form.as_p }}
  {% csrf_token %}
- <p><input type="submit" value="ADD"></p>
+ <p><input type="submit" value="Calculate"></p>
  </form>
- {% if result is not None%}
- {{ result }}
- {% endif %}
+ {% if operation == "add" %}
+ <p>The Answer is {% sum number_one number_two %}.</p>
+ {% elif operation == "sub" %}
+ <p>The Answer is {% sub number_one number_two %}.</p>
+ {% elif operation == "mul" %}
+ <p>The Answer is {% mul number_one number_two %}.</p>
+ {% elif operation == "div" %}
+ <p>The Answer is {% div number_one number_two %}.</p>
+ {% endif %} 
 {% endblock %}
