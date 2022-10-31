@@ -8,6 +8,7 @@
  {% csrf_token %}
  <p><input type="submit" value="Calculate"></p>
  </form>
+ <div id="operations">
  {% if operation == "add" %}
  <p>The Answer is {% sum number_one number_two %}.</p>
  {% elif operation == "sub" %}
@@ -16,5 +17,6 @@
  <p>The Answer is {% mul number_one number_two %}.</p>
  {% elif operation == "div" %}
  <p>The Answer is {% div number_one number_two %}.</p>
+</div>
  {% endif %} 
 {% endblock %}
