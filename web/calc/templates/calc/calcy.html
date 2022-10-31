@@ -16,7 +16,11 @@
  {% elif operation == "mul" %}
  <p>The Answer is {% mul number_one number_two %}.</p>
  {% elif operation == "div" %}
+    {% if number_two %}
  <p>The Answer is {% div number_one number_two %}.</p>
+    {% else %}
+ <p>can't divide by zero</p>
 </div>
+    {% endif %} 
  {% endif %} 
 {% endblock %}
